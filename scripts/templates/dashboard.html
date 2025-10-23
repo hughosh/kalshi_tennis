@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tennis Trading System - Web Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+        .stats-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
+        }
+        .signal-table {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .table th {
+            background-color: #f8f9fa;
+            border-top: none;
+            font-weight: 600;
+        }
+        .badge-win {
+            background-color: #28a745;
+        }
+        .badge-loss {
+            background-color: #dc3545;
+        }
+        .badge-pending {
+            background-color: #ffc107;
+            color: #000;
+        }
+        .badge-yes {
+            background-color: #007bff;
+        }
+        .badge-no {
+            background-color: #6c757d;
+        }
+        .serving-badge {
+            background-color: #17a2b8 !important;
+            color: white !important;
+            font-weight: bold;
+        }
+        .point-score {
+            font-style: italic;
+            color: #6c757d;
+        }
+        .set-score {
+            font-weight: bold;
+            color: #007bff;
+        }
+        .kalshi-odds {
+            font-size: 0.85em;
+        }
+        .odds-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2px;
+        }
+        .player-name {
+            font-weight: 500;
+            color: #495057;
+        }
+        .odds-value {
+            font-weight: bold;
+            color: #28a745;
+        }
+        .refresh-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 1000;
+        }
+        .loading {
+            text-align: center;
+            padding: 2rem;
+        }
+        .spinner-border {
+            width: 3rem;
+            height: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1><i class="fas fa-tennis-ball"></i> Tennis Trading System</h1>
+                    <p class="mb-0">Live Trading Signals & Kalshi Odds Dashboard</p>
+                </div>
+                <div class="col-md-4 text-end">
+                    <div class="d-flex justify-content-end align-items-center">
+                        <span class="me-3">Last Update: <span id="lastUpdate">--</span></span>
+                        <button class="btn btn-light btn-sm" onclick="refreshData()">
+                            <i class="fas fa-sync-alt"></i> Refresh
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Statistics Cards -->
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <div class="stats-card text-center">
+                    <h3 class="text-primary" id="totalSignals">0</h3>
+                    <p class="mb-0">Total Signals</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stats-card text-center">
+                    <h3 class="text-success" id="winRate">0%</h3>
+                    <p class="mb-0">Win Rate</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stats-card text-center">
+                    <h3 class="text-info" id="totalEdge">0.000</h3>
+                    <p class="mb-0">Total Edge</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stats-card text-center">
+                    <h3 class="text-warning" id="avgConfidence">0.000</h3>
+                    <p class="mb-0">Avg Confidence</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Live Matches -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="signal-table">
+                    <div class="p-3 border-bottom">
+                        <h5 class="mb-0"><i class="fas fa-play-circle"></i> Live Matches</h5>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Match</th>
+                                    <th>Tournament</th>
+                                    <th>Set Score</th>
+                                    <th>Game Score</th>
+                                    <th>Point Score</th>
+                                    <th>Serving</th>
+                                    <th>Kalshi YES Odds</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="matchesTable">
+                                <tr>
+                                    <td colspan="8" class="text-center loading">
+                                        <div class="spinner-border text-primary" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trading Signals Table -->
+        <div class="row">
+            <div class="col-12">
+                <div class="signal-table">
+                    <div class="p-3 border-bottom">
+                        <h5 class="mb-0"><i class="fas fa-chart-line"></i> Trading Signals</h5>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Time</th>
+                                    <th>Match</th>
+                                    <th>Signal</th>
+                                    <th>Position & P&L</th>
+                                    <th>Current Odds</th>
+                                    <th>Edge</th>
+                                    <th>Confidence</th>
+                                    <th>Outcome</th>
+                                </tr>
+                            </thead>
+                            <tbody id="signalsTable">
+                                <tr>
+                                    <td colspan="8" class="text-center loading">
+                                        <div class="spinner-border text-primary" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Refresh Button -->
+    <button class="btn btn-primary btn-lg refresh-btn" onclick="refreshData()" title="Refresh Data">
+        <i class="fas fa-sync-alt"></i>
+    </button>
+
+    <!-- Test Signal Modal -->
+    <div class="modal fade" id="testSignalModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add Test Signal</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="testSignalForm">
+                        <div class="mb-3">
+                            <label class="form-label">Player</label>
+                            <input type="text" class="form-control" id="player" value="Test Player" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Direction</label>
+                            <select class="form-select" id="direction" required>
+                                <option value="BUY">Buy (YES)</option>
+                                <option value="SELL">Sell (NO)</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Edge</label>
+                            <input type="number" class="form-control" id="edge" value="0.05" step="0.01" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Confidence</label>
+                            <input type="number" class="form-control" id="confidence" value="0.7" step="0.1" min="0" max="1" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="addTestSignal()">Add Signal</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let refreshInterval;
+
+        // Initialize the dashboard
+        document.addEventListener('DOMContentLoaded', function() {
+            refreshData();
+            // Auto-refresh every 30 seconds
+            refreshInterval = setInterval(refreshData, 30000);
+        });
+
+        async function refreshData() {
+            try {
+                console.log('Starting data refresh...');
+                
+                // Update statistics
+                const statsResponse = await fetch('/api/stats');
+                const stats = await statsResponse.json();
+                console.log('Stats received:', stats);
+                updateStats(stats);
+
+                // Update signals table
+                const signalsResponse = await fetch('/api/signals');
+                const signalsData = await signalsResponse.json();
+                console.log('Signals received:', signalsData.signals.length, 'signals');
+                updateSignalsTable(signalsData.signals);
+
+                // Update matches table
+                const matchesResponse = await fetch('/api/matches');
+                const matchesData = await matchesResponse.json();
+                console.log('Matches received:', matchesData.matches.length, 'matches');
+                updateMatchesTable(matchesData.matches);
+
+                // Update last update time
+                document.getElementById('lastUpdate').textContent = new Date().toLocaleTimeString();
+                console.log('Data refresh completed successfully');
+
+            } catch (error) {
+                console.error('Error refreshing data:', error);
+            }
+        }
+
+        function updateStats(stats) {
+            document.getElementById('totalSignals').textContent = stats.total_signals;
+            document.getElementById('winRate').textContent = stats.win_rate + '%';
+            document.getElementById('totalEdge').textContent = stats.total_edge;
+            document.getElementById('avgConfidence').textContent = stats.avg_confidence;
+        }
+
+        function updateSignalsTable(signals) {
+            console.log('updateSignalsTable called with', signals.length, 'signals');
+            const tbody = document.getElementById('signalsTable');
+            
+            if (signals.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="8" class="text-center text-muted">No signals yet</td></tr>';
+                return;
+            }
+
+            console.log('First signal:', signals[0]);
+            try {
+                tbody.innerHTML = signals.map(signal => {
+                    // Format position information
+                    let positionInfo = '';
+                    if (signal.position) {
+                        if (signal.position.status === 'active') {
+                            const pnlClass = signal.position.current_pnl_pct >= 0 ? 'text-success' : 'text-danger';
+                            positionInfo = `
+                                <div class="small">
+                                    <strong>Entry:</strong> ${signal.position.entry_price.toFixed(3)}<br>
+                                    <strong>Current:</strong> ${signal.position.current_price ? signal.position.current_price.toFixed(3) : '--'}<br>
+                                    <strong>P&L:</strong> <span class="${pnlClass}">${(signal.position.current_pnl_pct * 100).toFixed(1)}%</span><br>
+                                    <strong>Holding:</strong> ${Math.round(signal.position.holding_time_minutes)}m
+                                </div>
+                            `;
+                        } else if (signal.position.status === 'closed') {
+                            const pnlClass = signal.position.final_pnl_pct >= 0 ? 'text-success' : 'text-danger';
+                            positionInfo = `
+                                <div class="small">
+                                    <strong>Entry:</strong> ${signal.position.entry_price.toFixed(3)}<br>
+                                    <strong>Exit:</strong> ${signal.position.exit_price.toFixed(3)}<br>
+                                    <strong>Final P&L:</strong> <span class="${pnlClass}">${(signal.position.final_pnl_pct * 100).toFixed(1)}%</span><br>
+                                    <strong>Reason:</strong> ${signal.position.exit_reason}
+                                </div>
+                            `;
+                        }
+                    } else {
+                        positionInfo = '<span class="text-muted">No position</span>';
+                    }
+
+                    return `
+                        <tr>
+                            <td>${new Date(signal.timestamp).toLocaleTimeString()}</td>
+                            <td>
+                                <strong>${signal.player_names[0]} vs ${signal.player_names[1]}</strong><br>
+                                <small class="text-muted">${signal.tournament}</small>
+                            </td>
+                            <td>
+                                <strong>${signal.signal}</strong><br>
+                                <span class="badge badge-${signal.direction.toLowerCase()}">${signal.direction}</span>
+                            </td>
+                            <td>${positionInfo}</td>
+                            <td>${signal.current_odds ? signal.current_odds.toFixed(3) : '--'}</td>
+                            <td>${signal.edge.toFixed(3)}</td>
+                            <td>${signal.confidence.toFixed(3)}</td>
+                            <td><span class="badge badge-${signal.outcome.toLowerCase()}">${signal.outcome}</span></td>
+                        </tr>
+                    `;
+                }).join('');
+                console.log('Signals table updated successfully');
+            } catch (error) {
+                console.error('Error updating signals table:', error);
+                tbody.innerHTML = '<tr><td colspan="8" class="text-center text-danger">Error loading signals</td></tr>';
+            }
+        }
+
+        function updateMatchesTable(matches) {
+            const tbody = document.getElementById('matchesTable');
+            
+            if (matches.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="8" class="text-center text-muted">No live matches</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = matches.map(match => {
+                // Format Kalshi odds
+                let kalshiOddsHtml = '<span class="text-muted">N/A</span>';
+                if (match.kalshi_odds) {
+                    const players = match.players.split(' vs ');
+                    const player1 = players[0].trim();
+                    const player2 = players[1].trim();
+                    
+                    const odds1 = match.kalshi_odds[player1];
+                    const odds2 = match.kalshi_odds[player2];
+                    
+                    if (odds1 && odds2) {
+                        kalshiOddsHtml = `
+                            <div class="kalshi-odds">
+                                <div class="odds-row">
+                                    <span class="player-name">${player1}:</span>
+                                    <span class="odds-value">${(odds1.yes_price * 100).toFixed(1)}¢</span>
+                                </div>
+                                <div class="odds-row">
+                                    <span class="player-name">${player2}:</span>
+                                    <span class="odds-value">${(odds2.yes_price * 100).toFixed(1)}¢</span>
+                                </div>
+                            </div>
+                        `;
+                    }
+                }
+                
+                return `
+                    <tr>
+                        <td><strong>${match.players}</strong></td>
+                        <td>${match.tournament}</td>
+                        <td><span class="set-score">${match.set_score}</span></td>
+                        <td>${match.game_score}</td>
+                        <td><span class="point-score">${match.point_score}</span></td>
+                        <td><span class="badge serving-badge">${match.serving_player}</span></td>
+                        <td>${kalshiOddsHtml}</td>
+                        <td>
+                            <span class="badge ${match.is_live ? 'bg-success' : 'bg-secondary'}">
+                                ${match.is_live ? 'Live' : 'Finished'}
+                            </span>
+                            <br><small class="text-muted">Set ${match.current_set || 'N/A'}</small>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        async function addTestSignal() {
+            const form = document.getElementById('testSignalForm');
+            const formData = new FormData(form);
+            
+            const data = {
+                player: document.getElementById('player').value,
+                direction: document.getElementById('direction').value,
+                edge: parseFloat(document.getElementById('edge').value),
+                confidence: parseFloat(document.getElementById('confidence').value),
+                tournament: 'Test Tournament'
+            };
+
+            try {
+                const response = await fetch('/api/add_signal', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+                
+                if (result.success) {
+                    // Close modal and refresh data
+                    const modal = bootstrap.Modal.getInstance(document.getElementById('testSignalModal'));
+                    modal.hide();
+                    refreshData();
+                } else {
+                    alert('Error adding signal: ' + result.error);
+                }
+            } catch (error) {
+                console.error('Error adding test signal:', error);
+                alert('Error adding signal');
+            }
+        }
+
+        // Show test signal modal (for testing)
+        function showTestSignalModal() {
+            const modal = new bootstrap.Modal(document.getElementById('testSignalModal'));
+            modal.show();
+        }
+
+        // Add test button (for development)
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+            const testBtn = document.createElement('button');
+            testBtn.className = 'btn btn-warning btn-sm';
+            testBtn.innerHTML = '<i class="fas fa-plus"></i> Test Signal';
+            testBtn.onclick = showTestSignalModal;
+            testBtn.style.position = 'fixed';
+            testBtn.style.bottom = '2rem';
+            testBtn.style.left = '2rem';
+            testBtn.style.zIndex = '1000';
+            document.body.appendChild(testBtn);
+        }
+    </script>
+</body>
+</html>

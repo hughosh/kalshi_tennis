@@ -1,0 +1,9 @@
+# Kalshi API Token Configuration
+
+# To use real Kalshi API integration, you need to:
+# 1. Get your API token from Kalshi
+# 2. Set it as an environment variable: export KALSHI_API_TOKEN="your_token_here"
+# 3. Or create a file: echo "your_token_here" > config/kalshi_api_token.txt
+
+# Example token (replace with your actual token):
+# KALSHI_API_TOKEN=your_actual_kalshi_api_token_here
