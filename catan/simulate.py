@@ -8,7 +8,7 @@ from typing import List, Dict, Tuple
 from .game import CatanGame
 from .strategy import (
     HighestProbabilityStrategy, CityRushStrategy,
-    PortTraderStrategy, LongestRoadStrategy
+    PortTraderStrategy, LongestRoadStrategy, LargestArmyStrategy
 )
 
 
@@ -17,10 +17,11 @@ STRATEGIES = {
     "CityRush": CityRushStrategy,
     "PortTrader": PortTraderStrategy,
     "LongestRoad": LongestRoadStrategy,
+    "LargestArmy": LargestArmyStrategy,
 }
 
 
-def run_tournament(n_games: int = 500, n_players: int = 4, seed: int = 42) -> Dict:
+def run_tournament(n_games: int = 500, n_players: int = 5, seed: int = 42) -> Dict:
     """
     Run a tournament of N games with all strategies competing.
     Returns win rates, average VP, average rounds, and best placement stats.
@@ -288,7 +289,7 @@ def generate_strategy_guide(tournament: Dict, board_analysis: Dict) -> str:
 
     guide = f"""
 ╔══════════════════════════════════════════════════════════════╗
-║           CATAN WINNING STRATEGY GUIDE                      ║
+║       CATAN WINNING STRATEGY GUIDE  (5-Player Edition)      ║
 ║           Based on {tournament['total_games']} simulated games                  ║
 ╚══════════════════════════════════════════════════════════════╝
 
@@ -421,25 +422,45 @@ COMMON MISTAKES TO AVOID
   ✗ Ignoring ports — a 2:1 ore port turns a mediocre position into great
   ✗ Building a 3rd settlement when you have 2 upgradeable settlements
   ✗ Trading 4:1 when you could bank trade more efficiently next turn
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+5-PLAYER SPECIFIC ADJUSTMENTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  • Board congestion: good spots disappear faster — be aggressive in setup
+  • Robber is more dangerous: with 5 players it hits someone every ~6 rounds
+    instead of every ~6 rounds; keep cards low or diversify placements
+  • Longest Road is harder to hold — 5 players = more road conflict
+  • Largest Army is more achievable (deck shared by 5 → more knights drawn)
+  • Trading with players becomes viable — more partners, more deal-making
+  • Second settlement is even more critical: you get only 2 free placements
+    before the board is 40% occupied
+  • LargestArmy strategy synergizes well with CityRush (both want ore+wheat);
+    expect early contention for those hexes — plan backup production
+  • If going 4th or 5th in setup: scout before picking; let others commit first
+    then take the best remaining ore or wheat hex at a high-probability number
+  • With 5 players, games end faster (avg ~50 rounds); tempo matters more
+    — every turn without a build is falling behind
 """
     return guide
 
 
 if __name__ == "__main__":
-    print("Running Catan Strategy Simulation...")
+    print("Running Catan Strategy Simulation (5-Player Expansion)...")
 
-    # Main tournament
-    tournament = run_tournament(n_games=500, n_players=4, seed=42)
+    # Main tournament — 5 players, all 5 strategies
+    tournament = run_tournament(n_games=500, n_players=5, seed=42)
 
     # Board position analysis
     board_analysis = analyze_board_positions(n_boards=300)
 
-    # Head-to-head matchups
+    # Head-to-head matchups (5-player: all 5 strategies per game)
     h2h_pairs = [
         ("CityRush", "HighestProbability"),
-        ("CityRush", "PortTrader"),
+        ("CityRush", "LargestArmy"),
         ("CityRush", "LongestRoad"),
-        ("HighestProbability", "LongestRoad"),
+        ("LargestArmy", "HighestProbability"),
+        ("LargestArmy", "LongestRoad"),
     ]
     h2h_results = []
     for a, b in h2h_pairs:

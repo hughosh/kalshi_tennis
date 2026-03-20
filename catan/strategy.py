@@ -419,6 +419,116 @@ class LongestRoadStrategy(Strategy):
         return actions
 
 
+class LargestArmyStrategy(Strategy):
+    """
+    Focuses on dev cards + Largest Army (2 VP) while maintaining solid production.
+    Prioritizes ore+wheat+sheep for dev card spam and city upgrades.
+    Represents the 5th player in the expansion pack.
+    """
+
+    def choose_initial_settlement(self, board: CatanBoard, player: Player,
+                                   taken: List[int]) -> int:
+        valid = [v for v in board.vertices
+                 if v not in taken and _is_valid_placement(board, v, taken)]
+        if not valid:
+            return list(board.vertices.keys())[0]
+        return max(valid, key=lambda v: self._army_score(board, v, player.settlements))
+
+    def _army_score(self, board: CatanBoard, vid: int,
+                    existing: List[int]) -> float:
+        v = board.vertices[vid]
+        score = 0.0
+        for hex_id in v.adjacent_hexes:
+            h = board.hexes[hex_id]
+            if h.resource != Resource.DESERT and h.number:
+                prob = h.probability * 36
+                # Dev card requires ore+wheat+sheep — all equally valued
+                if h.resource in (Resource.ORE, Resource.WHEAT, Resource.SHEEP):
+                    score += prob * 2.0
+                else:
+                    score += prob * 0.4
+
+        if v.port:
+            score += 3.5
+
+        # Diversity bonus
+        if existing:
+            existing_res = set()
+            for s_vid in existing:
+                for hex_id in board.vertices[s_vid].adjacent_hexes:
+                    existing_res.add(board.hexes[hex_id].resource)
+            new_res = set(board.hexes[hid].resource for hid in v.adjacent_hexes
+                          if board.hexes[hid].resource != Resource.DESERT)
+            score += len(new_res - existing_res) * 1.5
+
+        return score
+
+    def choose_initial_road(self, board: CatanBoard, player: Player,
+                             settlement_vid: int) -> int:
+        v = board.vertices[settlement_vid]
+        if not v.adjacent_edges:
+            return list(board.edges.keys())[0]
+        best_edge, best_score = None, -1
+        for eid in v.adjacent_edges:
+            edge = board.edges[eid]
+            if edge.has_road:
+                continue
+            other_vid = edge.vertices[0] if edge.vertices[1] == settlement_vid else edge.vertices[1]
+            s = self._army_score(board, other_vid, player.settlements)
+            if s > best_score:
+                best_score, best_edge = s, eid
+        return best_edge if best_edge is not None else v.adjacent_edges[0]
+
+    def take_turn(self, board: CatanBoard, player: Player,
+                  all_players: List[Player]) -> List[str]:
+        actions = []
+
+        # Dev card > city > settlement > road; trade aggressively to fuel dev cards
+        _try_trade(board, player, actions)
+
+        if player.can_buy_dev_card():
+            player.spend_dev_card()
+            card = _draw_dev_card(board)
+            player.dev_cards.append(card)
+            if card == "knight":
+                player.knights_played += 1
+            actions.append(f"bought dev card: {card}")
+
+        elif player.can_build_city():
+            best_vid = max(player.settlements, key=lambda v: board.get_vertex_score(v))
+            player.spend_city()
+            player.settlements.remove(best_vid)
+            player.cities.append(best_vid)
+            board.vertices[best_vid].building = BuildingType.CITY
+            player.victory_points = player.calculate_vp()
+            actions.append(f"built city at {best_vid}")
+
+        elif player.can_build_settlement():
+            valid = board.get_valid_settlement_spots(player.settlements + player.cities)
+            reachable = _reachable_vertices(board, player)
+            valid_reachable = [v for v in valid if v in reachable]
+            if valid_reachable:
+                best_vid = max(valid_reachable,
+                               key=lambda v: self._army_score(board, v, player.settlements))
+                player.spend_settlement()
+                player.settlements.append(best_vid)
+                board.vertices[best_vid].building = BuildingType.SETTLEMENT
+                board.vertices[best_vid].player_id = player.player_id
+                player.victory_points = player.calculate_vp()
+                actions.append(f"built settlement at {best_vid}")
+
+        elif player.can_build_road():
+            frontier = _road_frontier(board, player)
+            if frontier:
+                eid = frontier[0]
+                player.spend_road()
+                player.roads.append(eid)
+                board.edges[eid].road_owner = player.player_id
+                actions.append(f"built road {eid}")
+
+        return actions
+
+
 # ============================================================
 # Helper Functions
 # ============================================================

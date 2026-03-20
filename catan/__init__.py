@@ -4,5 +4,5 @@ from .player import Player
 from .game import CatanGame
 from .strategy import (
     HighestProbabilityStrategy, CityRushStrategy,
-    PortTraderStrategy, LongestRoadStrategy
+    PortTraderStrategy, LongestRoadStrategy, LargestArmyStrategy
 )

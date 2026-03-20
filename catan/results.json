@@ -3,119 +3,119 @@
     "total_games": 500,
     "strategy_results": {
       "HighestProbability": {
-        "wins": 188,
+        "wins": 81,
         "games_played": 500,
-        "win_rate": 37.6,
-        "avg_vp": 7.32,
-        "avg_settlement_score": 12.42,
+        "win_rate": 16.2,
+        "avg_vp": 6.01,
+        "avg_settlement_score": 12.04,
         "top_resources": [
           [
-            "wheat",
-            654
-          ],
-          [
-            "sheep",
-            616
-          ],
-          [
             "wood",
+            671
+          ],
+          [
+            "wheat",
             613
+          ],
+          [
+            "brick",
+            595
           ]
         ],
         "top_numbers": [
           [
             6,
-            485
-          ],
-          [
-            8,
-            449
+            444
           ],
           [
             9,
-            438
+            429
+          ],
+          [
+            8,
+            415
           ],
           [
             5,
-            397
+            379
           ],
           [
-            4,
-            347
+            10,
+            323
           ]
         ]
       },
       "CityRush": {
-        "wins": 240,
+        "wins": 160,
         "games_played": 500,
-        "win_rate": 48.0,
-        "avg_vp": 7.83,
-        "avg_settlement_score": 10.74,
+        "win_rate": 32.0,
+        "avg_vp": 7.02,
+        "avg_settlement_score": 10.2,
         "top_resources": [
           [
             "wheat",
-            1199
+            1103
           ],
           [
             "ore",
-            848
+            795
           ],
           [
-            "sheep",
-            246
+            "wood",
+            268
           ]
         ],
         "top_numbers": [
           [
             6,
-            360
+            333
           ],
           [
             5,
-            344
+            310
           ],
           [
             8,
-            338
+            307
           ],
           [
             9,
-            331
+            299
           ],
           [
             10,
-            309
+            285
           ]
         ]
       },
       "PortTrader": {
-        "wins": 8,
+        "wins": 5,
         "games_played": 500,
-        "win_rate": 1.6,
-        "avg_vp": 3.26,
-        "avg_settlement_score": 10.83,
+        "win_rate": 1.0,
+        "avg_vp": 2.87,
+        "avg_settlement_score": 10.57,
         "top_resources": [
           [
             "wood",
-            528
+            560
           ],
           [
             "sheep",
-            493
+            473
           ],
           [
             "brick",
-            379
+            413
           ]
         ],
         "top_numbers": [
           [
-            8,
-            392
+            6,
+            366
           ],
           [
-            6,
-            387
+            8,
+            344
           ],
           [
             9,
@@ -123,59 +123,102 @@
           ],
           [
             5,
-            290
+            278
           ],
           [
             10,
-            220
+            219
           ]
         ]
       },
       "LongestRoad": {
-        "wins": 64,
+        "wins": 32,
         "games_played": 500,
-        "win_rate": 12.8,
-        "avg_vp": 5.91,
-        "avg_settlement_score": 12.98,
+        "win_rate": 6.4,
+        "avg_vp": 5.37,
+        "avg_settlement_score": 12.66,
         "top_resources": [
           [
             "wood",
-            752
-          ],
-          [
-            "sheep",
-            722
+            844
           ],
           [
             "brick",
-            582
+            639
+          ],
+          [
+            "sheep",
+            607
           ]
         ],
         "top_numbers": [
           [
             8,
-            603
+            564
           ],
           [
             6,
-            571
-          ],
-          [
-            5,
-            423
+            538
           ],
           [
             9,
-            423
+            392
+          ],
+          [
+            5,
+            388
+          ],
+          [
+            4,
+            322
+          ]
+        ]
+      },
+      "LargestArmy": {
+        "wins": 222,
+        "games_played": 500,
+        "win_rate": 44.4,
+        "avg_vp": 7.91,
+        "avg_settlement_score": 10.9,
+        "top_resources": [
+          [
+            "sheep",
+            1037
+          ],
+          [
+            "wheat",
+            783
+          ],
+          [
+            "ore",
+            575
+          ]
+        ],
+        "top_numbers": [
+          [
+            5,
+            380
+          ],
+          [
+            8,
+            378
+          ],
+          [
+            6,
+            332
+          ],
+          [
+            9,
+            321
           ],
           [
             10,
-            284
+            306
           ]
         ]
       }
     },
-    "avg_rounds": 58.31
+    "avg_rounds": 53.624
   },
   "board_analysis": {
     "number_token_priority": [
@@ -227,64 +270,64 @@
     "top_resource_combos": [
       {
         "combo": [
-          "sheep",
           "wood",
-          "wheat"
+          "wheat",
+          "sheep"
         ],
         "count": 153
       },
       {
         "combo": [
+          "wheat",
           "sheep",
-          "brick",
-          "wheat"
+          "brick"
         ],
         "count": 121
       },
       {
         "combo": [
-          "brick",
           "wood",
-          "wheat"
+          "wheat",
+          "brick"
         ],
         "count": 119
       },
       {
         "combo": [
-          "sheep",
           "ore",
-          "wheat"
+          "wheat",
+          "sheep"
         ],
         "count": 107
       },
       {
         "combo": [
-          "wood",
           "ore",
+          "wood",
           "wheat"
         ],
         "count": 106
       },
       {
         "combo": [
+          "wood",
           "sheep",
-          "brick",
-          "wood"
+          "brick"
         ],
         "count": 94
       },
       {
         "combo": [
           "ore",
-          "sheep",
-          "wood"
+          "wood",
+          "sheep"
         ],
         "count": 93
       },
       {
         "combo": [
-          "sheep",
-          "wood"
+          "wood",
+          "sheep"
         ],
         "count": 93
       },
@@ -297,9 +340,9 @@
       },
       {
         "combo": [
-          "brick",
           "ore",
-          "wheat"
+          "wheat",
+          "brick"
         ],
         "count": 82
       }
@@ -309,39 +352,48 @@
     {
       "strategy_a": "CityRush",
       "strategy_b": "HighestProbability",
-      "wins_a": 126,
-      "wins_b": 74,
-      "win_rate_a": 63.0,
-      "win_rate_b": 37.0,
-      "avg_rounds": 51.9
+      "wins_a": 123,
+      "wins_b": 77,
+      "win_rate_a": 61.5,
+      "win_rate_b": 38.5,
+      "avg_rounds": 51.5
     },
     {
       "strategy_a": "CityRush",
-      "strategy_b": "PortTrader",
-      "wins_a": 190,
-      "wins_b": 10,
-      "win_rate_a": 95.0,
-      "win_rate_b": 5.0,
-      "avg_rounds": 54.5
+      "strategy_b": "LargestArmy",
+      "wins_a": 101,
+      "wins_b": 99,
+      "win_rate_a": 50.5,
+      "win_rate_b": 49.5,
+      "avg_rounds": 53.3
     },
     {
       "strategy_a": "CityRush",
       "strategy_b": "LongestRoad",
-      "wins_a": 165,
-      "wins_b": 35,
-      "win_rate_a": 82.5,
-      "win_rate_b": 17.5,
-      "avg_rounds": 57.8
+      "wins_a": 167,
+      "wins_b": 33,
+      "win_rate_a": 83.5,
+      "win_rate_b": 16.5,
+      "avg_rounds": 56.4
     },
     {
-      "strategy_a": "HighestProbability",
+      "strategy_a": "LargestArmy",
+      "strategy_b": "HighestProbability",
+      "wins_a": 118,
+      "wins_b": 82,
+      "win_rate_a": 59.0,
+      "win_rate_b": 41.0,
+      "avg_rounds": 52.6
+    },
+    {
+      "strategy_a": "LargestArmy",
       "strategy_b": "LongestRoad",
-      "wins_a": 165,
-      "wins_b": 35,
-      "win_rate_a": 82.5,
-      "win_rate_b": 17.5,
-      "avg_rounds": 62.7
+      "wins_a": 147,
+      "wins_b": 53,
+      "win_rate_a": 73.5,
+      "win_rate_b": 26.5,
+      "avg_rounds": 58.1
     }
   ],
-  "strategy_guide": "\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551           CATAN WINNING STRATEGY GUIDE                      \u2551\n\u2551           Based on 500 simulated games                  \u2551\n\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d\n\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\nOVERALL WIN RATES\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n  CityRush            : \u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593   48.0%\n  HighestProbability  : \u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593         37.6%\n  LongestRoad         : \u2593\u2593\u2593\u2593\u2593\u2593                     12.8%\n  PortTrader          :                             1.6%\n\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n#1 BEST STRATEGY: CityRush  (Win rate: 48.0%)\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\nCORE PRINCIPLE: Build cities as fast as possible.\nCities produce 2 resources per roll instead of 1, creating\na compounding production advantage that is very hard to stop.\n\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\nINITIAL SETTLEMENT PLACEMENT (Most Important Decision!)\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\nFIRST SETTLEMENT \u2014 Prioritize ore + wheat production:\n  \u2022 Must-have: At least one hex with ore OR wheat at number 5, 6, 8, or 9\n  \u2022 Best case: Intersection touching ORE + WHEAT + (wood/brick/sheep)\n  \u2022 Target number tokens: 6, 8, 9 (highest probability)\n  \u2022 Ideal: 3 unique resources with combined pip count \u2265 10\n\nSECOND SETTLEMENT \u2014 Fill resource gaps + production:\n  \u2022 If 1st settlement has ore: seek wheat + sheep + wood/brick\n  \u2022 If 1st settlement has wheat: seek ore + wood + brick\n  \u2022 Never duplicate the same resource heavily\n  \u2022 A 3:1 port nearby dramatically helps trading efficiency\n  \u2022 Target: different 3 resources from 1st settlement\n\nTOP RESOURCE COMBINATIONS AT BEST BOARD VERTICES:\n  #1: sheep + wheat + wood\n  #2: brick + sheep + wheat\n  #3: brick + wheat + wood\n\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\nNUMBER TOKEN PRIORITY (higher = appear more in winning spots)\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n  Token  6: \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588             33.7% (of top spots)\n  Token  8: \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588             33.5% (of top spots)\n  Token  9: \u2588\u2588\u2588\u2588\u2588                22.7% (of top spots)\n  Token  5: \u2588\u2588\u2588\u2588\u2588                20.8% (of top spots)\n  Token  4: \u2588\u2588\u2588                  12.9% (of top spots)\n  Token 10: \u2588\u2588                   11.9% (of top spots)\n  Token  3: \u2588                    6.3% (of top spots)\n  Token 11: \u2588                    6.0% (of top spots)\n  Token 12:                      2.0% (of top spots)\n  Token  2:                      1.2% (of top spots)\n  Token  7:                      0.0% (of top spots)\n\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\nTURN PRIORITY ORDER (what to build/buy each turn)\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\n  1. CITY UPGRADE        \u2014 Best VP per resource spent (5 res = 2 VP)\n  2. DEVELOPMENT CARD    \u2014 Knights = Largest Army (2 VP), VP cards\n  3. NEW SETTLEMENT      \u2014 Only if it gives new resources or a port\n  4. ROAD               \u2014 Only to reach a valuable vertex\n  5. BANK TRADE         \u2014 Last resort; use ports aggressively\n\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\nVICTORY POINT PATHS TO 10 VP\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\n  Path A \u2014 Pure City Rush (easiest):\n    2 initial settlements (2 VP)\n    + 2 cities (4 VP total, net +2 over settlements)\n    + 2 more settlements (2 VP)\n    + 2 more cities (4 VP total)\n    + Largest Army or VP dev cards (2 VP)\n    = 10 VP  \u2713\n\n  Path B \u2014 Mixed (with Longest Road):\n    2 settlements (2 VP)\n    \u2192 Build 5+ road chain = Longest Road (2 VP)\n    + 3 settlements along road (3 VP)\n    + 2 cities (4 VP)\n    \u2192 11 VP after cities  \u2713\n\n  Path C \u2014 Dev Card Heavy:\n    Settlements + cities = 8 VP\n    + 3 VP dev cards drawn = 11 VP \u2713\n    (risky due to card luck)\n\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\nKEY TACTICAL TIPS\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\n  \u2022 NEVER skip a 6 or 8 \u2014 these two numbers alone roll 28% of the time\n  \u2022 Ore is most scarce (3 tiles); secure it early or you can't build cities\n  \u2022 Sheep is cheapest resource to get via port; use 2:1 sheep port if available\n  \u2022 The robber on 6/8 is devastating; place 2nd settlement away from heavy 6/8 tiles\n    to have a robber-proof backup production source\n  \u2022 Blocking opponents: place roads to cut off their expansion paths\n  \u2022 If you're behind in VP, switch to dev cards (hidden VP) \u2014 opponents can't block\n  \u2022 With a 3:1 port + any 2-resource surplus, you can convert efficiently\n  \u2022 Cities are always better than settlements; upgrade ASAP\n\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\nEXAMPLE OPTIMAL OPENING\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\n  Settlement 1: Ore(8) + Wheat(5) + Sheep(9)\n    \u2192 14 combined pips, covers 3 city-building resources\n    \u2192 Build road toward a port\n\n  Settlement 2: Wood(6) + Brick(9) + Wheat(4)\n    \u2192 Fills in road-building resources for expansion\n    \u2192 Gets starting resources: 1 wood + 1 brick + 1 wheat\n    \u2192 Enables immediate road building in round 1\n\n  Early game plan:\n    Rounds 1-3: Build roads toward a 3:1 port\n    Round 4:    Build 3rd settlement at port\n    Round 5-8:  Accumulate ore+wheat, build first city\n    Round 9-12: Second city \u2192 6 VP base\n    Round 13+:  Dev cards for Largest Army + last 4 VP\n\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\nCOMMON MISTAKES TO AVOID\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\n  \u2717 Both settlements on wheat/ore only (no wood/brick \u2192 can't expand)\n  \u2717 Chasing Longest Road without VP settlements along the route\n  \u2717 Building roads with no destination in mind\n  \u2717 Hoarding resources past 7 cards (robber bait)\n  \u2717 Ignoring ports \u2014 a 2:1 ore port turns a mediocre position into great\n  \u2717 Building a 3rd settlement when you have 2 upgradeable settlements\n  \u2717 Trading 4:1 when you could bank trade more efficiently next turn\n"
+  "strategy_guide": "\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551       CATAN WINNING STRATEGY GUIDE  (5-Player Edition)      \u2551\n\u2551           Based on 500 simulated games                  \u2551\n\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d\n\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\nOVERALL WIN RATES\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n  LargestArmy         : \u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593     44.4%\n  CityRush            : \u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593           32.0%\n  HighestProbability  : \u2593\u2593\u2593\u2593\u2593\u2593\u2593\u2593                   16.2%\n  LongestRoad         : \u2593\u2593\u2593                         6.4%\n  PortTrader          :                             1.0%\n\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n#1 BEST STRATEGY: LargestArmy  (Win rate: 44.4%)\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\nCORE PRINCIPLE: Build cities as fast as possible.\nCities produce 2 resources per roll instead of 1, creating\na compounding production advantage that is very hard to stop.\n\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\nINITIAL SETTLEMENT PLACEMENT (Most Important Decision!)\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\nFIRST SETTLEMENT \u2014 Prioritize ore + wheat production:\n  \u2022 Must-have: At least one hex with ore OR wheat at number 5, 6, 8, or 9\n  \u2022 Best case: Intersection touching ORE + WHEAT + (wood/brick/sheep)\n  \u2022 Target number tokens: 6, 8, 9 (highest probability)\n  \u2022 Ideal: 3 unique resources with combined pip count \u2265 10\n\nSECOND SETTLEMENT \u2014 Fill resource gaps + production:\n  \u2022 If 1st settlement has ore: seek wheat + sheep + wood/brick\n  \u2022 If 1st settlement has wheat: seek ore + wood + brick\n  \u2022 Never duplicate the same resource heavily\n  \u2022 A 3:1 port nearby dramatically helps trading efficiency\n  \u2022 Target: different 3 resources from 1st settlement\n\nTOP RESOURCE COMBINATIONS AT BEST BOARD VERTICES:\n  #1: sheep + wheat + wood\n  #2: brick + sheep + wheat\n  #3: brick + wheat + wood\n\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\nNUMBER TOKEN PRIORITY (higher = appear more in winning spots)\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n  Token  6: \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588             33.7% (of top spots)\n  Token  8: \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588             33.5% (of top spots)\n  Token  9: \u2588\u2588\u2588\u2588\u2588                22.7% (of top spots)\n  Token  5: \u2588\u2588\u2588\u2588\u2588                20.8% (of top spots)\n  Token  4: \u2588\u2588\u2588                  12.9% (of top spots)\n  Token 10: \u2588\u2588                   11.9% (of top spots)\n  Token  3: \u2588                    6.3% (of top spots)\n  Token 11: \u2588                    6.0% (of top spots)\n  Token 12:                      2.0% (of top spots)\n  Token  2:                      1.2% (of top spots)\n  Token  7:                      0.0% (of top spots)\n\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\nTURN PRIORITY ORDER (what to build/buy each turn)\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\n  1. CITY UPGRADE        \u2014 Best VP per resource spent (5 res = 2 VP)\n  2. DEVELOPMENT CARD    \u2014 Knights = Largest Army (2 VP), VP cards\n  3. NEW SETTLEMENT      \u2014 Only if it gives new resources or a port\n  4. ROAD               \u2014 Only to reach a valuable vertex\n  5. BANK TRADE         \u2014 Last resort; use ports aggressively\n\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\nVICTORY POINT PATHS TO 10 VP\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\n  Path A \u2014 Pure City Rush (easiest):\n    2 initial settlements (2 VP)\n    + 2 cities (4 VP total, net +2 over settlements)\n    + 2 more settlements (2 VP)\n    + 2 more cities (4 VP total)\n    + Largest Army or VP dev cards (2 VP)\n    = 10 VP  \u2713\n\n  Path B \u2014 Mixed (with Longest Road):\n    2 settlements (2 VP)\n    \u2192 Build 5+ road chain = Longest Road (2 VP)\n    + 3 settlements along road (3 VP)\n    + 2 cities (4 VP)\n    \u2192 11 VP after cities  \u2713\n\n  Path C \u2014 Dev Card Heavy:\n    Settlements + cities = 8 VP\n    + 3 VP dev cards drawn = 11 VP \u2713\n    (risky due to card luck)\n\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\nKEY TACTICAL TIPS\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\n  \u2022 NEVER skip a 6 or 8 \u2014 these two numbers alone roll 28% of the time\n  \u2022 Ore is most scarce (3 tiles); secure it early or you can't build cities\n  \u2022 Sheep is cheapest resource to get via port; use 2:1 sheep port if available\n  \u2022 The robber on 6/8 is devastating; place 2nd settlement away from heavy 6/8 tiles\n    to have a robber-proof backup production source\n  \u2022 Blocking opponents: place roads to cut off their expansion paths\n  \u2022 If you're behind in VP, switch to dev cards (hidden VP) \u2014 opponents can't block\n  \u2022 With a 3:1 port + any 2-resource surplus, you can convert efficiently\n  \u2022 Cities are always better than settlements; upgrade ASAP\n\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\nEXAMPLE OPTIMAL OPENING\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\n  Settlement 1: Ore(8) + Wheat(5) + Sheep(9)\n    \u2192 14 combined pips, covers 3 city-building resources\n    \u2192 Build road toward a port\n\n  Settlement 2: Wood(6) + Brick(9) + Wheat(4)\n    \u2192 Fills in road-building resources for expansion\n    \u2192 Gets starting resources: 1 wood + 1 brick + 1 wheat\n    \u2192 Enables immediate road building in round 1\n\n  Early game plan:\n    Rounds 1-3: Build roads toward a 3:1 port\n    Round 4:    Build 3rd settlement at port\n    Round 5-8:  Accumulate ore+wheat, build first city\n    Round 9-12: Second city \u2192 6 VP base\n    Round 13+:  Dev cards for Largest Army + last 4 VP\n\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\nCOMMON MISTAKES TO AVOID\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\n  \u2717 Both settlements on wheat/ore only (no wood/brick \u2192 can't expand)\n  \u2717 Chasing Longest Road without VP settlements along the route\n  \u2717 Building roads with no destination in mind\n  \u2717 Hoarding resources past 7 cards (robber bait)\n  \u2717 Ignoring ports \u2014 a 2:1 ore port turns a mediocre position into great\n  \u2717 Building a 3rd settlement when you have 2 upgradeable settlements\n  \u2717 Trading 4:1 when you could bank trade more efficiently next turn\n\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n5-PLAYER SPECIFIC ADJUSTMENTS\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\n  \u2022 Board congestion: good spots disappear faster \u2014 be aggressive in setup\n  \u2022 Robber is more dangerous: with 5 players it hits someone every ~6 rounds\n    instead of every ~6 rounds; keep cards low or diversify placements\n  \u2022 Longest Road is harder to hold \u2014 5 players = more road conflict\n  \u2022 Largest Army is more achievable (deck shared by 5 \u2192 more knights drawn)\n  \u2022 Trading with players becomes viable \u2014 more partners, more deal-making\n  \u2022 Second settlement is even more critical: you get only 2 free placements\n    before the board is 40% occupied\n  \u2022 LargestArmy strategy synergizes well with CityRush (both want ore+wheat);\n    expect early contention for those hexes \u2014 plan backup production\n  \u2022 If going 4th or 5th in setup: scout before picking; let others commit first\n    then take the best remaining ore or wheat hex at a high-probability number\n  \u2022 With 5 players, games end faster (avg ~50 rounds); tempo matters more\n    \u2014 every turn without a build is falling behind\n"
 }
